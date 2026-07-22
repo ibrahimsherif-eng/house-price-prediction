@@ -329,8 +329,11 @@ Models were evaluated using standard regression metrics:
 
 | Model | MAE | RMSE | R² |
 |---|---|---|---|
-| Linear Regression | — | — | — |
-| Random Forest | — | — | — |
+| Linear Regression | ₹4,469,653 | ₹6,862,553 | 0.615 |
+| Random Forest | ₹1,457,309 | ₹3,571,682 | 0.896 |
+| Gradient Boosting | ₹2,732,632 | ₹4,575,338 | 0.829 |
+
+> **Best model:** Random Forest — lowest error and highest R² (0.896), so it was selected and exported as `house_price.pkl`.
 
 > 📓 Full metric values and model comparison results are available in `house_price_prediction_done.ipynb`.
 
