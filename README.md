@@ -317,26 +317,41 @@ Both models were assessed through cross-validation before a final pipeline was s
 
 ---
 
-## 📊 Model Evaluation
+## 📈 Model Evaluation
 
-Models were evaluated using standard regression metrics:
+Three regression models were trained and evaluated on the test dataset using standard regression metrics.
+
+### 📊 Evaluation Metrics
 
 | Metric | Description |
-|---|---|
-| **MAE** | Mean Absolute Error — average magnitude of prediction errors |
-| **RMSE** | Root Mean Squared Error — penalizes larger errors more heavily |
-| **R²** | Coefficient of Determination — proportion of variance explained by the model |
+| :--- | :--- |
+| **MAE ↓** | Measures the average prediction error. Lower values indicate better performance. |
+| **RMSE ↓** | Penalizes larger prediction errors more heavily. Lower values are better. |
+| **R² ↑** | Indicates how well the model explains the variance in house prices. Higher values are better. |
 
-| Model | MAE | RMSE | R² |
-|---|---|---|---|
+### 🏆 Model Comparison
+
+| Model | MAE | RMSE | R² Score |
+| :--- | ---: | ---: | ---: |
 | Linear Regression | ₹4,469,653 | ₹6,862,553 | 0.615 |
-| Random Forest | ₹1,457,309 | ₹3,571,682 | 0.896 |
 | Gradient Boosting | ₹2,732,632 | ₹4,575,338 | 0.829 |
+| **🥇 Random Forest** | **₹1,457,309** | **₹3,571,682** | **0.896** |
 
-> **Best model:** Random Forest — lowest error and highest R² (0.896), so it was selected and exported as `house_price.pkl`.
+### 🎯 Final Model
 
-> 📓 Full metric values and model comparison results are available in `house_price_prediction_done.ipynb`.
+| Property | Value |
+| :--- | :--- |
+| **Selected Model** |  Random Forest Regressor |
+| **MAE** | ₹1,457,309 |
+| **RMSE** | ₹3,571,682 |
+| **R² Score** | **0.896** |
+| **Exported Model** | `house_price.pkl` |
 
+> 🏆 **Why Random Forest?**
+>
+> It achieved the **lowest MAE**, **lowest RMSE**, and the **highest R² score**, making it the most accurate model among all evaluated algorithms. Therefore, it was selected for deployment and exported as **`house_price.pkl`**.
+
+> 📓 **Note:** Complete training logs, visualizations, and detailed model comparisons are available in **`house_price_prediction_done.ipynb`**.
 ---
 
 ## ⚙️ Backend Overview
